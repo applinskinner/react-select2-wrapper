@@ -77,7 +77,9 @@ export default class Select2 extends Component {
       this.updateSelect2Value(null);
     }
     this.el.select2(this.prepareOptions(options));
-    props.onReady(this.el);
+    if (props.onReady) {
+      props.onReady(this.el);
+    }
     this.attachEventHandlers(props);
   }
 
