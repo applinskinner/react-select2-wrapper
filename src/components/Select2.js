@@ -23,6 +23,7 @@ export default class Select2 extends Component {
     events: PropTypes.array,
     options: PropTypes.object,
     multiple: PropTypes.bool,
+    onReady: PropTypes.func,
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
     onSelect: PropTypes.func,
@@ -39,7 +40,6 @@ export default class Select2 extends Component {
       [`select2:select.${namespace}`, 'onSelect'],
       [`select2:unselect.${namespace}`, 'onUnselect'],
     ],
-    options: {},
     multiple: false,
   };
 
@@ -77,6 +77,7 @@ export default class Select2 extends Component {
       this.updateSelect2Value(null);
     }
     this.el.select2(this.prepareOptions(options));
+    this.props.onReady(this.el);
     this.attachEventHandlers(props);
   }
 
