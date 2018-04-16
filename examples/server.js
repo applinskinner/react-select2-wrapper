@@ -16,7 +16,7 @@ new WebpackDevServer(webpack(config), {
   stats: {
     colors: true,
   },
-}).listen(port, function(err) {
+}).listen(port, function (err) {
   if (err) {
     console.log(err);
   }

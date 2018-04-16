@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { h, Component } from 'preact';
 import Select2 from '../../src/components/Select2';
 import '../../css/select2.css';
 

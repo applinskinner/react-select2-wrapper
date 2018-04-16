@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import { h, Component } from 'preact';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import shallowEqualFuzzy from 'shallow-equal-fuzzy';
 import $ from 'jquery';
 import 'select2';
@@ -71,7 +70,7 @@ export default class Select2 extends Component {
   initSelect2(props) {
     const { options } = props;
 
-    this.el = $(ReactDOM.findDOMNode(this));
+    this.el = $(this.base);
     // fix for updating selected value when data is changing
     if (this.forceUpdateValue) {
       this.updateSelect2Value(null);
