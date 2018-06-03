@@ -137,7 +137,10 @@ export default class Select2 extends Component {
       this.detachEventHandlers();
     }
 
-    this.el.select2('destroy');
+    if (this.el.data('select2')) {
+      this.el.select2('destroy');
+    }
+
     this.el = null;
   }
 
